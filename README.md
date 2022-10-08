@@ -17,3 +17,14 @@ I'm treating this framework as a way to understand something like Apache Spark
 "by doing" and by looking under the hood. I'm of course no match for the >1,000
 brilliant contributors combined on the open source Spark engine, but the core 
 concepts are similar and hopefully help you become a better data engineer!
+
+## Features
+
+- [x] Read Text Files  
+- [x] `.Foreach`  
+- [x] `.Show`  
+- [ ] Create API/RPC for physically separating Nodes across machines  
+- [ ] `.Map`  
+- [ ] `.Count`  
+- [ ] `.Collect`  
+- [ ] `.Write`  
