@@ -1,4 +1,8 @@
-package pkg
+package gobig
+
+import (
+	"fmt"
+)
 
 type Row map[string]interface{}
 
@@ -24,4 +28,13 @@ func (r *Row) GetBool(column string) bool {
 
 func (r *Row) GetFloat(column string) float64 {
 	return (*r)[column].(float64)
+}
+
+func (r *Row) String() string {
+	s := "[| "
+	for _, v := range *r {
+		s += fmt.Sprintf("%v | ", v)
+	}
+	s += " |]"
+	return s
 }

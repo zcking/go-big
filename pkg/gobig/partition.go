@@ -1,4 +1,4 @@
-package pkg
+package gobig
 
 type Partition struct {
 	Rows []*Row
@@ -10,6 +10,12 @@ func NewPartition(data []map[string]interface{}) *Partition {
 		rows[i] = NewRow(r)
 	}
 
+	return &Partition{
+		Rows: rows,
+	}
+}
+
+func NewPartitionFromRows(rows []*Row) *Partition {
 	return &Partition{
 		Rows: rows,
 	}
