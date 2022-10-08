@@ -33,8 +33,7 @@ func TestDataFrame_ReadFiles_SingleFile(t *testing.T) {
 	df, err := ReadFiles("../../data/foods/drinks.json")
 	assert.NoError(t, err)
 
-	err = df.Show()
-	assert.NoError(t, err)
+	df.Show()
 }
 
 func TestDataFrame_ReadFiles_IsLazy(t *testing.T) {

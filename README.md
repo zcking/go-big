@@ -24,7 +24,7 @@ concepts are similar and hopefully help you become a better data engineer!
 - [x] `.Foreach`  
 - [x] `.Show`  
 - [ ] Create API/RPC for physically separating Nodes across machines  
-- [ ] `.Map`  
+- [x] `.Map`  
 - [ ] `.Count`  
 - [ ] `.Collect`  
 - [ ] `.Write`  

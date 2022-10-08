@@ -24,6 +24,5 @@ func TestDataFrame_Show(t *testing.T) {
 	df, err := NewDataFrame(rawData)
 	assert.NoError(t, err)
 
-	err = df.Show()
-	assert.NoError(t, err)
+	df.Show()
 }

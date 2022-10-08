@@ -2,6 +2,7 @@ package gobig
 
 import (
 	"fmt"
+	"strings"
 )
 
 type Row map[string]interface{}
@@ -31,10 +32,12 @@ func (r *Row) GetFloat(column string) float64 {
 }
 
 func (r *Row) String() string {
-	s := "[| "
+	parts := make([]string, len(*r))
+	partsIdx := 0
 	for _, v := range *r {
-		s += fmt.Sprintf("%v | ", v)
+		parts[partsIdx] = fmt.Sprintf("%v", v)
+		partsIdx++
 	}
-	s += " |]"
-	return s
+
+	return fmt.Sprintf("[| %s |]", strings.Join(parts, " | "))
 }

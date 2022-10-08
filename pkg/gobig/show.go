@@ -2,17 +2,21 @@ package gobig
 
 import (
 	"fmt"
+	"log"
 	"strings"
 )
 
-func (df *DataFrame) Show() error {
+func (df *DataFrame) Show() {
 	columnsString := strings.Join(df.Columns, " | ")
 	columnsHeader := fmt.Sprintf("[| %s |]\n", columnsString)
 	fmt.Print(columnsHeader)
 	fmt.Printf(strings.Repeat("-", len(columnsHeader)))
 	fmt.Println()
 
-	return df.PushStep(&ShowExecution{})
+	err := df.PushStep(&ShowExecution{})
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 type ShowExecution struct {
