@@ -1,6 +1,7 @@
 package pkg
 
 import (
+	"log"
 	"time"
 )
 
@@ -11,6 +12,14 @@ var (
 type DataFrame struct {
 	Partitions []*Partition
 	Nodes      []*Node
+}
+
+func NewEmptyDataFrame() *DataFrame {
+	df, err := NewDataFrame([]map[string]interface{}{})
+	if err != nil {
+		log.Panicf("%v", err)
+	}
+	return df
 }
 
 func NewDataFrame(data []map[string]interface{}) (*DataFrame, error) {

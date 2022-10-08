@@ -1,7 +1,5 @@
 package pkg
 
-import "fmt"
-
 func (df *DataFrame) Foreach(fn func(r *Row)) {
 	// For each partition in the dataframe
 	// Execute "fn" against each row in that partition.
@@ -20,8 +18,7 @@ func (df *DataFrame) Foreach(fn func(r *Row)) {
 			},
 		}
 
-		fmt.Printf("sending signal to node(%d)\n", node.id)
-		node.SendSignal(signal)
+		node.SendSignal(signal, nil)
 	}
 
 	// Wait for all nodes to be finished
